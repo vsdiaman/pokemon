@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../data/data.dart';
-import './pokemon_card.dart'; // Importe o novo componente
+import './pokemon_card.dart';
 
 class PokemonPage extends StatelessWidget {
   final PokedexApi _pokedexApi = PokedexApi();
@@ -10,32 +10,44 @@ class PokemonPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Center(
-            child: Text(
-          'Pokedex',
-          style: TextStyle(
-            fontSize: 38,
-            fontWeight: FontWeight.bold,
+          child: Text(
+            'Pokedex',
+            style: TextStyle(
+              fontSize: 28,
+              color: Color.fromARGB(255, 255, 17, 0),
+              fontWeight: FontWeight.bold,
+            ),
           ),
-        )),
+        ),
       ),
-      body: FutureBuilder<Map<String, dynamic>>(
-        future: _pokedexApi.getFirstPokemon(),
+      body: FutureBuilder<List<Map<String, dynamic>>>(
+        future: _pokedexApi.getPokemonList(),
         builder: (context, snapshot) {
           try {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return CircularProgressIndicator();
+              return Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError || snapshot.data == null) {
-              return Text('Erro ao carregar os dados do Pokémon');
+              return Center(
+                  child: Text('Erro ao carregar os dados dos Pokémon'));
             } else {
-              Map<String, dynamic> data = snapshot.data!;
-              // Utilize o novo componente PokemonCard
-              return PokemonCard(
-                name: data['name'] ?? '',
-                imageUrl: data['img'] ?? '',
+              List<Map<String, dynamic>> pokemonList = snapshot.data!;
+              // Utilize um GridView.builder para construir cards para cada Pokémon
+              return GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2, // Define o número de colunas na grade
+                ),
+                itemCount: pokemonList.length,
+                itemBuilder: (context, index) {
+                  Map<String, dynamic> pokemon = pokemonList[index];
+                  return PokemonCard(
+                    name: pokemon['name'] ?? '',
+                    imageUrl: pokemon['img'] ?? '',
+                  );
+                },
               );
             }
           } catch (error) {
-            return Text('Erro inesperado: $error');
+            return Center(child: Text('Erro inesperado: $error'));
           }
         },
       ),

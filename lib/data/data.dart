@@ -5,25 +5,23 @@ class PokedexApi {
   final String apiUrl =
       'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
 
-  Future<Map<String, dynamic>> getFirstPokemon() async {
+  Future<List<Map<String, dynamic>>> getPokemonList() async {
     final response = await http.get(Uri.parse(apiUrl));
 
     if (response.statusCode == 200) {
-      Map<String, dynamic> decodedData = json.decode(response.body);
-      List<dynamic> pokemonList = decodedData['pokemon'];
+      List<dynamic> data = json.decode(response.body)['pokemon'];
+      List<Map<String, dynamic>> pokemonList = [];
 
-      if (pokemonList.isNotEmpty) {
-        Map<String, dynamic> firstPokemon = pokemonList[6];
-        return {
-          'name': firstPokemon['name'],
-          'img': firstPokemon['img'],
-          'num': firstPokemon['num'],
-        };
-      } else {
-        throw Exception('A lista de Pokémon está vazia');
+      for (var pokemon in data) {
+        pokemonList.add({
+          'name': pokemon['name'],
+          'img': pokemon['img'],
+        });
       }
+
+      return pokemonList;
     } else {
-      throw Exception('Falha ao carregar os dados do Pokémon');
+      throw Exception('Falha ao carregar os dados dos Pokémon');
     }
   }
 }
