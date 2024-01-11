@@ -14,6 +14,8 @@ class PokemonList extends StatelessWidget {
           return PokemonCard(
             name: pokemon['name'] ?? '',
             imageUrl: pokemon['img'] ?? '',
+            pokemonNum: pokemon['num'] ?? '',
+            pokemonWeight: pokemon['weight'] ?? '',
           );
         }).toList(),
       ),
@@ -24,8 +26,14 @@ class PokemonList extends StatelessWidget {
 class PokemonCard extends StatelessWidget {
   final String name;
   final String imageUrl;
+  final String pokemonNum;
+  final String pokemonWeight;
 
-  PokemonCard({required this.name, required this.imageUrl});
+  PokemonCard(
+      {required this.name,
+      required this.imageUrl,
+      required this.pokemonNum,
+      required this.pokemonWeight});
 
   @override
   Widget build(BuildContext context) {

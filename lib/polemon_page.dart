@@ -25,15 +25,15 @@ class PokemonPage extends StatelessWidget {
         builder: (context, snapshot) {
           try {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(child: CircularProgressIndicator());
+              return const Center(child: CircularProgressIndicator());
             } else if (snapshot.hasError || snapshot.data == null) {
-              return Center(
+              return const Center(
                   child: Text('Erro ao carregar os dados dos Pokémon'));
             } else {
               List<Map<String, dynamic>> pokemonList = snapshot.data!;
               // Utilize um GridView.builder para construir cards para cada Pokémon
               return GridView.builder(
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2, // Define o número de colunas na grade
                 ),
                 itemCount: pokemonList.length,
@@ -42,6 +42,8 @@ class PokemonPage extends StatelessWidget {
                   return PokemonCard(
                     name: pokemon['name'] ?? '',
                     imageUrl: pokemon['img'] ?? '',
+                    pokemonNum: pokemon['num'] ?? '',
+                    pokemonWeight: pokemon['weight'] ?? '',
                   );
                 },
               );

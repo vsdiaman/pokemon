@@ -16,6 +16,8 @@ class PokedexApi {
         pokemonList.add({
           'name': pokemon['name'],
           'img': pokemon['img'],
+          'num': pokemon['num'],
+          'weight': pokemon['weight'],
         });
       }
 
