@@ -10,7 +10,7 @@ class PokemonCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 200,
-      height: 240,
+      height: 230,
       child: Center(
         child: Card(
           elevation: 8,

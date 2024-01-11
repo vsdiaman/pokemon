@@ -13,10 +13,11 @@ class PokedexApi {
       List<dynamic> pokemonList = decodedData['pokemon'];
 
       if (pokemonList.isNotEmpty) {
-        Map<String, dynamic> firstPokemon = pokemonList[11];
+        Map<String, dynamic> firstPokemon = pokemonList[6];
         return {
           'name': firstPokemon['name'],
           'img': firstPokemon['img'],
+          'num': firstPokemon['num'],
         };
       } else {
         throw Exception('A lista de Pokémon está vazia');
