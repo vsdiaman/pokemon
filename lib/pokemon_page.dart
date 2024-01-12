@@ -44,6 +44,7 @@ class PokemonPage extends StatelessWidget {
                     imageUrl: pokemon['img'] ?? '',
                     pokemonNum: pokemon['num'] ?? '',
                     pokemonWeight: pokemon['weight'] ?? '',
+                    pokemonHeight: pokemon['height'] ?? '',
                   );
                 },
               );

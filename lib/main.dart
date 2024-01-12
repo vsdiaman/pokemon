@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'polemon_page.dart';
+import 'pokemon_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -51,7 +51,7 @@ class _SplashScreenState extends State<SplashScreen>
       body: SafeArea(
         child: Center(
           child: SpinKitPulsingGrid(
-            color: Color.fromARGB(255, 26, 176, 221),
+            color: Color.fromARGB(255, 221, 65, 26),
             size: 50.0,
             controller: _animationController,
           ),

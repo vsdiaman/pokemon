@@ -18,6 +18,7 @@ class PokedexApi {
           'img': pokemon['img'],
           'num': pokemon['num'],
           'weight': pokemon['weight'],
+          'height': pokemon['height'],
         });
       }
 
