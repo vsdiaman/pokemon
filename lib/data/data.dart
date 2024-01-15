@@ -19,6 +19,7 @@ class PokedexApi {
           'num': pokemon['num'],
           'weight': pokemon['weight'],
           'height': pokemon['height'],
+          'type': List<String>.from(pokemon['type']),
         });
       }
 

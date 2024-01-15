@@ -18,6 +18,7 @@ class PokemonList extends StatelessWidget {
             pokemonNum: pokemon['num'] ?? '',
             pokemonWeight: pokemon['weight'] ?? '',
             pokemonHeight: pokemon['height'] ?? '',
+            pokemonType: pokemon['type'] ?? [],
           );
         }).toList(),
       ),
@@ -31,6 +32,7 @@ class PokemonCard extends StatelessWidget {
   final String pokemonNum;
   final String pokemonWeight;
   final String pokemonHeight;
+  final List<String> pokemonType;
 
   PokemonCard({
     required this.name,
@@ -38,6 +40,7 @@ class PokemonCard extends StatelessWidget {
     required this.pokemonNum,
     required this.pokemonWeight,
     required this.pokemonHeight,
+    required this.pokemonType,
   });
 
   @override
@@ -54,6 +57,7 @@ class PokemonCard extends StatelessWidget {
               pokemonNum: pokemonNum,
               pokemonWeight: pokemonWeight,
               pokemonHeight: pokemonHeight,
+              pokemonType: pokemonType, // Passa a lista completa de tipos
             ),
           ),
         );
@@ -63,7 +67,34 @@ class PokemonCard extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.all(8.0),
             child: Card(
-              color: const Color.fromARGB(255, 253, 214, 95),
+              color: pokemonType[0] == 'Grass'
+                  ? Colors.greenAccent
+                  : pokemonType[0] == 'Fire'
+                      ? Colors.redAccent
+                      : pokemonType[0] == 'Water'
+                          ? Colors.blue
+                          : pokemonType[0] == 'Electric'
+                              ? Colors.yellow
+                              : pokemonType[0] == 'Rock'
+                                  ? Colors.grey
+                                  : pokemonType[0] == 'Ground'
+                                      ? Colors.brown
+                                      : pokemonType[0] == 'Psychic'
+                                          ? Colors.indigo
+                                          : pokemonType[0] == 'Fighting'
+                                              ? Colors.orange
+                                              : pokemonType[0] == 'Bug'
+                                                  ? Colors.lightGreenAccent
+                                                  : pokemonType[0] == 'Ghost'
+                                                      ? Colors.deepPurple
+                                                      : pokemonType[0] ==
+                                                              'Normal'
+                                                          ? Colors.black26
+                                                          : pokemonType[0] ==
+                                                                  'Poison'
+                                                              ? Colors
+                                                                  .deepPurpleAccent
+                                                              : Colors.lime,
               elevation: 8,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15.0),
