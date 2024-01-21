@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../data/data.dart';
 import './pokemon_card.dart';
+import './pokemon_search.dart';
 
 class PokemonPage extends StatefulWidget {
   @override
@@ -17,15 +18,21 @@ class _PokemonPageState extends State<PokemonPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Color.fromARGB(255, 231, 11, 11),
-        title: Container(
-          child: Center(
-            child: Image.asset(
-              'lib/assets/screens/images/Pokédex_logo.png',
-              width: 150,
-              height: 100,
+        title: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Container(
+            child: Center(
+              child: Image.asset(
+                'lib/assets/screens/images/Pokédex_logo.png',
+                width: 150,
+                height: 100,
+              ),
             ),
           ),
         ),
+        actions: [
+          SearchBarApp(), // Adicione o componente de pesquisa ao AppBar
+        ],
       ),
       body: Container(
         color: Color.fromARGB(255, 255, 255, 255),
