@@ -36,7 +36,16 @@ class PokemonDetails extends StatelessWidget {
     double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Pokemon Details'),
+        title: const Text(
+          '#POKEMONS',
+          style: TextStyle(
+            fontSize: 22,
+            fontWeight: FontWeight.w700,
+            fontFamily: 'Roboto-Black',
+            height: 1.3333333333,
+            color: Color.fromARGB(255, 80, 79, 79),
+          ),
+        ),
       ),
       body: Container(
         width: double.infinity,
@@ -129,42 +138,48 @@ class PokemonDetails extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // typechipsLkb (I1016:1461;1013:567)
                             width: 51 * fem,
                             height: double.infinity,
                             decoration: BoxDecoration(
-                              color: pokemonType == 'Grass'
-                                  ? Colors.greenAccent
-                                  : pokemonType == 'Fire'
-                                      ? Colors.redAccent
-                                      : pokemonType == 'Water'
-                                          ? Colors.blue
-                                          : pokemonType == 'Electric'
-                                              ? Colors.yellow
-                                              : pokemonType == 'Rock'
-                                                  ? Colors.grey
-                                                  : pokemonType == 'Ground'
-                                                      ? Colors.brown
-                                                      : pokemonType == 'Psychic'
-                                                          ? Colors.indigo
-                                                          : pokemonType ==
-                                                                  'Fighting'
-                                                              ? Colors.orange
-                                                              : pokemonType ==
-                                                                      'Bug'
+                              color: pokemonType.length > 1
+                                  ? (pokemonType[1] == 'Grass'
+                                      ? Colors.greenAccent
+                                      : pokemonType[1] == 'Fire'
+                                          ? Colors.redAccent
+                                          : pokemonType[1] == 'Flying'
+                                              ? const Color.fromARGB(
+                                                  255, 255, 82, 246)
+                                              : pokemonType[1] == 'Water'
+                                                  ? Colors.blue
+                                                  : pokemonType[1] == 'Electric'
+                                                      ? Colors.yellow
+                                                      : pokemonType[1] == 'Rock'
+                                                          ? Colors.grey
+                                                          : pokemonType[1] ==
+                                                                  'Ground'
+                                                              ? Colors.brown
+                                                              : pokemonType[
+                                                                          1] ==
+                                                                      'Psychic'
                                                                   ? Colors
-                                                                      .lightGreenAccent
-                                                                  : pokemonType ==
-                                                                          'Ghost'
+                                                                      .indigo
+                                                                  : pokemonType[
+                                                                              1] ==
+                                                                          'Fighting'
                                                                       ? Colors
-                                                                          .deepPurple
-                                                                      : pokemonType ==
-                                                                              'Normal'
+                                                                          .orange
+                                                                      : pokemonType[1] ==
+                                                                              'Bug'
                                                                           ? Colors
-                                                                              .black26
-                                                                          : pokemonType == 'Poison'
+                                                                              .lightGreenAccent
+                                                                          : pokemonType[1] == 'Ghost'
                                                                               ? Colors.deepPurple
-                                                                              : Color.fromARGB(255, 12, 12, 12),
+                                                                              : pokemonType[1] == 'Normal'
+                                                                                  ? Colors.black26
+                                                                                  : pokemonType[1] == 'Poison'
+                                                                                      ? Colors.deepPurple
+                                                                                      : Color.fromARGB(255, 12, 12, 12))
+                                  : Color.fromARGB(255, 12, 12, 12),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
@@ -932,7 +947,7 @@ class PokemonDetails extends StatelessWidget {
                         // image4RZ (I1016:1461;1013:701;1013:1332)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 32 * fem, 0 * fem),
-                        width: 180 * fem,
+                        width: 160 * fem,
                         height: 150 * fem,
                         child: Image.network(
                           imageUrl,
@@ -966,57 +981,55 @@ class PokemonDetails extends StatelessWidget {
                 ),
               ),
             ),
-            Positioned(
-              // titleUkB (I1016:1461;1013:486)
-              left: 29.3332519531 * fem,
-              top: 24 * fem,
-              child: Container(
-                width: 326.67 * fem,
-                height: 32 * fem,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      // pokmonnameXTZ (I1016:1461;1013:489)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 112 * fem, 0 * fem),
-                      child: Text(
-                        name,
-                        style: GoogleFonts.poppins(
-                          fontSize: 24 * ffem,
-                          fontWeight: FontWeight.w700,
-                          height: 1.3333333333 * ffem / fem,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      // typechips65Z (I1016:1461;1013:569)
-                      margin: EdgeInsets.fromLTRB(
-                          0 * fem, 0 * fem, 16 * fem, 0 * fem),
-                      width: 46 * fem,
-                      height: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Color.fromARGB(255, 235, 238, 233),
-                        borderRadius: BorderRadius.circular(22 * fem),
-                      ),
-                      child: Center(
-                        child: Text(
-                          // 2fD (I1016:1461;1013:490)
-                          '#$pokemonNum',
-                          style: GoogleFonts.poppins(
-                            fontSize: 12 * ffem,
-                            fontWeight: FontWeight.w700,
-                            height: 1.3333333333 * ffem / fem,
-                            color: Color.fromARGB(171, 1, 128, 128),
+            Stack(
+              children: [
+                Positioned(
+                  left: 29.3332519531 * fem,
+                  top: 24 * fem,
+                  child: Container(
+                    width: 326.67 * fem,
+                    height: 32 * fem,
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          child: Text(
+                            name,
+                            style: TextStyle(
+                              fontSize: 24 * ffem,
+                              fontFamily: 'VT323',
+                              fontWeight: FontWeight.w700,
+                              height: 1.3333333333 * ffem / fem,
+                              color: Color(0xffffffff),
+                            ),
                           ),
                         ),
-                      ),
+                        Spacer(), // Utilizamos o Spacer para ocupar todo o espaço disponível
+                        Container(
+                          width: 46 * fem,
+                          height: double.infinity,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 235, 238, 233),
+                            borderRadius: BorderRadius.circular(22 * fem),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '#$pokemonNum',
+                              style: GoogleFonts.poppins(
+                                fontSize: 12 * ffem,
+                                fontWeight: FontWeight.w700,
+                                height: 1.3333333333 * ffem / fem,
+                                color: Color.fromARGB(171, 1, 128, 128),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ],
+                  ),
                 ),
-              ),
-            ),
+              ],
+            )
           ],
         ),
       ),

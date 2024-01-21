@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pokemon_details.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PokemonList extends StatelessWidget {
   final List<Map<String, dynamic>> pokemonList;
@@ -112,16 +113,24 @@ class PokemonCard extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
                         // Número do Pokémon
-                        Align(
-                          alignment: Alignment.topRight,
-                          child: Text(
-                            '#$pokemonNum',
-                            style: const TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
+                        Container(
+                          width: 46,
+                          decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 235, 238, 233),
+                            borderRadius: BorderRadius.circular(22),
+                          ),
+                          child: Center(
+                            child: Text(
+                              '#$pokemonNum',
+                              style: GoogleFonts.poppins(
+                                fontSize: 12,
+                                fontWeight: FontWeight.w700,
+                                height: 1.3333333333,
+                                color: Color.fromARGB(171, 1, 128, 128),
+                              ),
                             ),
                           ),
                         ), //colocar o } aqui
@@ -142,19 +151,81 @@ class PokemonCard extends StatelessWidget {
                           ),
                         ),
                         // Nome do Pokémon
-                        Text(
-                          name,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                        Container(
+                          child: Column(
+                            children: [
+                              Center(
+                                child: Container(
+                                  child: Text(
+                                    name,
+                                    style: const TextStyle(
+                                      fontSize: 22,
+                                      fontWeight: FontWeight.w500,
+                                      fontFamily: 'VT323',
+                                      height: 1.3333333333,
+                                      color: Color.fromARGB(255, 255, 255, 255),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              // Container(
+                              //   margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
+                              //   width: 46,
+                              //   // height: double.infinity,
+                              //   decoration: BoxDecoration(
+                              //     color: pokemonType[0] == 'Grass'
+                              //         ? Colors.greenAccent
+                              //         : pokemonType[0] == 'Fire'
+                              //             ? Colors.redAccent
+                              //             : pokemonType[0] == 'Water'
+                              //                 ? Colors.blue
+                              //                 : pokemonType[0] == 'Electric'
+                              //                     ? Colors.yellow
+                              //                     : pokemonType[0] == 'Rock'
+                              //                         ? Colors.grey
+                              //                         : pokemonType[0] ==
+                              //                                 'Ground'
+                              //                             ? Colors.brown
+                              //                             : pokemonType[0] ==
+                              //                                     'Psychic'
+                              //                                 ? Colors.indigo
+                              //                                 : pokemonType[
+                              //                                             0] ==
+                              //                                         'Fighting'
+                              //                                     ? Colors
+                              //                                         .orange
+                              //                                     : pokemonType[
+                              //                                                 0] ==
+                              //                                             'Bug'
+                              //                                         ? Colors
+                              //                                             .lightGreenAccent
+                              //                                         : pokemonType[0] ==
+                              //                                                 'Ghost'
+                              //                                             ? Colors
+                              //                                                 .deepPurple
+                              //                                             : pokemonType[0] == 'Normal'
+                              //                                                 ? Colors.black26
+                              //                                                 : pokemonType[0] == 'Poison'
+                              //                                                     ? Colors.deepPurple
+                              //                                                     : Colors.lime,
+                              //     borderRadius: BorderRadius.circular(15),
+                              //   ),
+                              //   child: Padding(
+                              //     padding: const EdgeInsets.all(8.0),
+                              //     child: Center(
+                              //       child: Text(
+                              //         pokemonType[0],
+                              //         style: const TextStyle(
+                              //             fontSize: 10,
+                              //             color: Color.fromARGB(255, 8, 8, 8)),
+                              //       ),
+                              //     ),
+                              //   ),
+                              // ),
+                            ],
                           ),
                         ),
                         // Peso do Pokémon
-                        Text(
-                          'Weight: $pokemonWeight',
-                          style: const TextStyle(
-                              fontSize: 8, color: Color.fromARGB(255, 8, 8, 8)),
-                        ),
                       ],
                     ),
                   ),
