@@ -63,9 +63,21 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - lib/assets/height.png
-    - lib/assets/peso.png
-    - lib/assets/pokeballfby.png
+    # Seta para direita
+    - "lib/assets/screens/images/chevronright-675.png"
+    # Peso
+    - "lib/assets/screens/images/weight-t4K.png"
+    # Altura
+    - "lib/assets/screens/images/straighten-zJo.png"
+    # Pokeball
+    - "lib/assets/screens/images/pokeball-fby.png"
+    # Seta grande pra esquerda
+    - "lib/assets/screens/images/arrowback-FFq.png"
+    # Pokedex logo
+    - "lib/assets/screens/images/Pokédex_logo.png"
+    # seta para esquerda
+    - "lib/assets/components/images/chevronleft-xJf.png"
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 

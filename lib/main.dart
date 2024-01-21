@@ -7,7 +7,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
     );
@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen>
     _animationController.forward();
 
     // Simulação de carregamento de dados (substitua por sua lógica real)
-    Future.delayed(Duration(seconds: 3), () {
+    Future.delayed(Duration(seconds: 2), () {
       // Após o carregamento, navegue para a tela principal (PokemonPage)
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => PokemonPage()),

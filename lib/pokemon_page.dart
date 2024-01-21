@@ -9,13 +9,19 @@ class PokemonPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            'Pokedex',
-            style: TextStyle(
-              fontSize: 28,
-              color: Color.fromARGB(255, 255, 17, 0),
-              fontWeight: FontWeight.bold,
+        automaticallyImplyLeading: false,
+        title: Container(
+          decoration: BoxDecoration(
+            border: Border.all(color: Colors.transparent),
+            color: Color.fromARGB(255, 231, 11, 11),
+            borderRadius: BorderRadius.circular(
+                10.0), // Ajuste o raio conforme necessário
+          ),
+          child: Center(
+            child: Image.asset(
+              'lib/assets/screens/images/Pokédex_logo.png',
+              width: 150,
+              height: 100,
             ),
           ),
         ),

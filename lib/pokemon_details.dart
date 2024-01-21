@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'pokemon_page.dart';
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PokemonPage(),
+    );
+  }
+}
 
 class PokemonDetails extends StatelessWidget {
   final String name;
@@ -21,117 +31,52 @@ class PokemonDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double baseWidth = 360;
+    double fem = MediaQuery.of(context).size.width / baseWidth;
+    double ffem = fem * 0.97;
     return Scaffold(
       appBar: AppBar(
-          // title: const Text('Pokemon Details'),
-          ),
+        title: const Text('Pokemon Details'),
+      ),
       body: Container(
         width: double.infinity,
-        height: 640,
+        height: double.infinity,
         decoration: BoxDecoration(
-          color: Color(0xff74cb48),
+          color: Color.fromARGB(255, 72, 203, 203),
         ),
         child: Stack(
           children: [
             Positioned(
-              left: 29.3332519531,
-              right: 24,
+              // cardumm (I1016:1461;1013:493)
+              left: 4 * fem,
+              top: 224 * fem,
+
               child: Container(
-                width: 306.67,
-                height: 32,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 13.73, 0),
-                      width: 20.93,
-                      height: 20.53,
-                      // child: Image.network(
-                      //   'https://icons8.com.br/icon/7811/esquerda',
-                      //   width: 30.93,
-                      //   height: 30.53,
-                      // ),
-                    ),
-                    Container(
-                      // Name of Pokemon
-                      margin: EdgeInsets.fromLTRB(0, 0, 112, 0),
-                      child: Text(
-                        name,
-                        style: GoogleFonts.poppins(
-                          fontSize: 26,
-                          fontWeight: FontWeight.w700,
-                          height: 1.3333333333,
-                          color: Color(0xffffffff),
-                        ),
-                      ),
-                    ),
-                    Text(
-                      // Number of Pokemon
-                      '#$pokemonNum',
-                      style: GoogleFonts.poppins(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w700,
-                        height: 1.3333333333,
-                        color: Color(0xffffffff),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              left: 32.3000488281,
-              top: 80,
-              child: Container(
-                width: 303.7,
-                height: 200,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 31.92, 41.2, 0),
-                      width: 6.5,
-                      height: 11.42,
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 32, 0),
-                      width: 200,
-                      height: 200,
-                      child: Image.network(
-                        imageUrl,
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Positioned(
-              top: 224,
-              left: 4,
-              right: 4,
-              child: Container(
-                padding: EdgeInsets.fromLTRB(20, 56, 20, 20),
-                // width: 352,
-                height: 412,
+                padding:
+                    EdgeInsets.fromLTRB(20 * fem, 56 * fem, 20 * fem, 20 * fem),
+                width: 352 * fem,
+                height: 412 * fem,
                 decoration: BoxDecoration(
-                  color: Color(0xffffffff),
-                  borderRadius: BorderRadius.circular(8),
+                  color: Color.fromARGB(255, 255, 255, 255),
+                  borderRadius: BorderRadius.circular(8 * fem),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      margin: EdgeInsets.fromLTRB(99.5, 0, 99.5, 16),
+                      // typeNfM (I1016:1461;1013:571)
+                      margin: EdgeInsets.fromLTRB(
+                          99.5 * fem, 0 * fem, 99.5 * fem, 16 * fem),
                       width: double.infinity,
-                      height: 20,
+                      height: 20 * fem,
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // typechipsCYK (I1016:1461;1013:569)
-                            margin: EdgeInsets.fromLTRB(0, 0, 16, 0),
-                            width: 46,
+                            // typechips65Z (I1016:1461;1013:569)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 16 * fem, 0 * fem),
+                            width: 46 * fem,
                             height: double.infinity,
                             decoration: BoxDecoration(
                               color: pokemonType[0] == 'Grass'
@@ -175,29 +120,62 @@ class PokemonDetails extends StatelessWidget {
                               child: Text(
                                 pokemonType[0],
                                 style: GoogleFonts.poppins(
-                                  fontSize: 10,
+                                  fontSize: 10 * ffem,
                                   fontWeight: FontWeight.w700,
-                                  height: 1.6,
+                                  height: 1.6 * ffem / fem,
                                   color: Color(0xffffffff),
                                 ),
                               ),
                             ),
                           ),
                           Container(
-                            // typechipsFWb (I1016:1461;1013:567)
-                            width: 51,
+                            // typechipsLkb (I1016:1461;1013:567)
+                            width: 51 * fem,
                             height: double.infinity,
                             decoration: BoxDecoration(
-                              color: Color(0xffa43e9e),
+                              color: pokemonType == 'Grass'
+                                  ? Colors.greenAccent
+                                  : pokemonType == 'Fire'
+                                      ? Colors.redAccent
+                                      : pokemonType == 'Water'
+                                          ? Colors.blue
+                                          : pokemonType == 'Electric'
+                                              ? Colors.yellow
+                                              : pokemonType == 'Rock'
+                                                  ? Colors.grey
+                                                  : pokemonType == 'Ground'
+                                                      ? Colors.brown
+                                                      : pokemonType == 'Psychic'
+                                                          ? Colors.indigo
+                                                          : pokemonType ==
+                                                                  'Fighting'
+                                                              ? Colors.orange
+                                                              : pokemonType ==
+                                                                      'Bug'
+                                                                  ? Colors
+                                                                      .lightGreenAccent
+                                                                  : pokemonType ==
+                                                                          'Ghost'
+                                                                      ? Colors
+                                                                          .deepPurple
+                                                                      : pokemonType ==
+                                                                              'Normal'
+                                                                          ? Colors
+                                                                              .black26
+                                                                          : pokemonType == 'Poison'
+                                                                              ? Colors.deepPurple
+                                                                              : Color.fromARGB(255, 12, 12, 12),
                               borderRadius: BorderRadius.circular(10),
                             ),
                             child: Center(
                               child: Text(
-                                'Poison',
+                                pokemonType.length > 1
+                                    ? pokemonType[1]
+                                    : 'None',
                                 style: GoogleFonts.poppins(
-                                  fontSize: 10,
+                                  fontSize: 10 * ffem,
                                   fontWeight: FontWeight.w700,
-                                  height: 1.6,
+                                  height: 1.6 * ffem / fem,
                                   color: Color(0xffffffff),
                                 ),
                               ),
@@ -207,242 +185,171 @@ class PokemonDetails extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      // about7Hu (I1016:1461;1013:574)
+                      // aboutSHq (I1016:1461;1013:574)
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 16 * fem),
                         child: Text(
                           'About',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                            fontSize: 18,
+                            fontSize: 14 * ffem,
                             fontWeight: FontWeight.w700,
-                            height: 1.1428571429,
-                            color: Color(0xff74cb48),
+                            height: 1.1428571429 * ffem / fem,
+                            color: Color.fromARGB(255, 139, 141, 139),
                           ),
                         ),
                       ),
                     ),
                     Container(
-                      // attributenew (I1016:1461;1013:634)
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 30),
-                      padding: EdgeInsets.fromLTRB(24.67, 0, 23.17, 0),
+                      margin: EdgeInsets.only(bottom: 30 * fem),
                       width: double.infinity,
-                      height: 48,
                       decoration: BoxDecoration(
-                        color: Color(0xffffffff),
+                        color: Color.fromARGB(255, 255, 255, 255),
                       ),
                       child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 24.67, 0),
-                            width: 54,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 12),
-                                  padding: EdgeInsets.fromLTRB(2.62, 0, 0, 0),
-                                  width: double.infinity,
-                                  child: Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Container(
-                                        margin: EdgeInsets.fromLTRB(
-                                            0, 0, 10.62, 0.33),
-                                        width: 10.76,
-                                        height: 12.33,
-                                        child: Image.asset(
-                                          'lib/assets/peso.png',
-                                          width: 10.76,
-                                          height: 12.33,
-                                        ),
-                                      ),
-                                      Text(
-                                        // kgyZ5 (I1016:1461;1013:638)
-                                        pokemonWeight,
-                                        style: GoogleFonts.poppins(
-                                          fontSize: 8,
-                                          fontWeight: FontWeight.w500,
-                                          height: 1.6,
-                                          color: Color(0xff1c1c1c),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Center(
-                                  // weightJbM (I1016:1461;1013:639)
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Text(
-                                      'Weight',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.5,
-                                        color: Color(0xff666666),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            // dividerpZh (I1016:1461;1013:640)
-                            margin: EdgeInsets.fromLTRB(0, 0, 26.17, 0),
-                            width: 1,
-                            height: 48,
-                            decoration: BoxDecoration(
-                              color: Color(0xffe0e0e0),
-                            ),
-                          ),
-                          Container(
-                            margin: EdgeInsets.fromLTRB(0, 0, 26.17, 0),
-                            width: 51,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 12),
-                                  padding: EdgeInsets.fromLTRB(4, 0, 0, 0),
-                                  width: double.infinity,
-                                  child: Row(
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(35 * fem, 0, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.center,
                                     children: [
                                       Container(
                                         margin:
-                                            EdgeInsets.fromLTRB(0, 0, 12, 0),
-                                        width: 8,
-                                        height: 13.33,
+                                            EdgeInsets.only(right: 10.62 * fem),
+                                        width: 10.76 * fem,
+                                        height: 12.33 * fem,
                                         child: Image.asset(
-                                          'lib/assets/height.png',
-                                          width: 8,
-                                          height: 13.33,
+                                          'lib/assets/screens/images/weight-t4K.png',
+                                          width: 10.76 * fem,
+                                          height: 12.33 * fem,
                                         ),
                                       ),
                                       Text(
-                                        // m7SK (I1016:1461;1013:644)
-                                        pokemonHeight,
+                                        pokemonWeight,
                                         style: GoogleFonts.poppins(
-                                          fontSize: 7,
-                                          fontWeight: FontWeight.w200,
-                                          height: 1.6,
+                                          fontSize: 10 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.6 * ffem / fem,
                                           color: Color(0xff1c1c1c),
                                         ),
                                       ),
                                     ],
                                   ),
-                                ),
-                                Center(
-                                  // heightreo (I1016:1461;1013:645)
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Text(
-                                      'Height',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.5,
-                                        color: Color(0xff666666),
-                                      ),
+                                  Text(
+                                    'Weight',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 8 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xff666666),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                           Container(
-                            // dividerM5m (I1016:1461;1013:646)
-                            margin: EdgeInsets.fromLTRB(0, 0, 23.17, 0),
-                            width: 1,
-                            height: 48,
+                            width: 1 * fem,
+                            height: 48 * fem,
                             decoration: BoxDecoration(
                               color: Color(0xffe0e0e0),
                             ),
                           ),
-                          Container(
-                            height: double.infinity,
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Container(
-                                  // ability1ability2az7 (I1016:1461;1013:648)
-                                  margin: EdgeInsets.fromLTRB(0, 0, 0, 4),
-                                  constraints: BoxConstraints(
-                                    maxWidth: 57,
-                                  ),
-                                  child: Text(
-                                    'Chlorophyll Overgrow',
-                                    style: GoogleFonts.poppins(
-                                      fontSize: 10,
-                                      fontWeight: FontWeight.w200,
-                                      height: 1.6,
-                                      color: Color(0xff1c1c1c),
-                                    ),
-                                  ),
-                                ),
-                                Center(
-                                  // moves6Bm (I1016:1461;1013:649)
-                                  child: Container(
-                                    margin: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Text(
-                                      'Moves',
-                                      textAlign: TextAlign.center,
-                                      style: GoogleFonts.poppins(
-                                        fontSize: 8,
-                                        fontWeight: FontWeight.w400,
-                                        height: 1.5,
-                                        color: Color(0xff666666),
+                          Expanded(
+                            child: Padding(
+                              padding: EdgeInsets.fromLTRB(35 * fem, 0, 0, 0),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Container(
+                                        margin:
+                                            EdgeInsets.only(right: 10.62 * fem),
+                                        width: 10.76 * fem,
+                                        height: 12.33 * fem,
+                                        child: Image.asset(
+                                          'lib/assets/screens/images/straighten-zJo.png',
+                                          width: 10.76 * fem,
+                                          height: 12.33 * fem,
+                                        ),
                                       ),
+                                      Text(
+                                        pokemonHeight,
+                                        style: GoogleFonts.poppins(
+                                          fontSize: 10 * ffem,
+                                          fontWeight: FontWeight.w400,
+                                          height: 1.6 * ffem / fem,
+                                          color: Color(0xff1c1c1c),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Text(
+                                    'Height',
+                                    style: GoogleFonts.poppins(
+                                      fontSize: 8 * ffem,
+                                      fontWeight: FontWeight.w400,
+                                      height: 1.5 * ffem / fem,
+                                      color: Color(0xff666666),
                                     ),
                                   ),
-                                ),
-                              ],
+                                ],
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 18, 30),
+                      // loremipsumdolorsitametconsecte (I1016:1461;1013:520)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 18 * fem, 30 * fem),
                       constraints: BoxConstraints(
-                        maxWidth: 294,
+                        maxWidth: 294 * fem,
                       ),
                       child: Text(
                         'There is a plant seed on its back right from the day this Pokémon is born. The seed slowly grows larger.',
                         style: GoogleFonts.poppins(
-                          fontSize: 10,
+                          fontSize: 10 * ffem,
                           fontWeight: FontWeight.w400,
-                          height: 1,
+                          height: 1.6 * ffem / fem,
                           color: Color(0xff1c1c1c),
                         ),
                       ),
                     ),
                     Center(
+                      // basestatsKCX (I1016:1461;1013:652)
                       child: Container(
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 0 * fem, 16 * fem),
                         child: Text(
                           'Base Stats',
                           textAlign: TextAlign.center,
                           style: GoogleFonts.poppins(
-                            fontSize: 14,
+                            fontSize: 14 * ffem,
                             fontWeight: FontWeight.w700,
-                            height: 1.1428571429,
-                            color: Color(0xff74cb48),
+                            height: 1.1428571429 * ffem / fem,
+                            color: Color.fromARGB(255, 139, 141, 139),
                           ),
                         ),
                       ),
                     ),
                     Container(
-                      // basestatsvLT (I1016:1461;1013:653)
+                      // basestatsRFZ (I1016:1461;1013:653)
                       width: double.infinity,
-                      height: 96,
+                      height: 96 * fem,
                       decoration: BoxDecoration(
                         color: Color(0xffffffff),
                       ),
@@ -450,210 +357,218 @@ class PokemonDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // labelT5V (I1016:1461;1013:654)
-                            margin: EdgeInsets.fromLTRB(0, 0, 12, 0),
+                            // labelZ6s (I1016:1461;1013:654)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 12 * fem, 0 * fem),
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  // hpyZd (I1016:1461;1013:655)
+                                  // hpUUj (I1016:1461;1013:655)
                                   'HP',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // atkuy5 (I1016:1461;1013:656)
+                                  // atkomu (I1016:1461;1013:656)
                                   'ATK',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // defFX9 (I1016:1461;1013:657)
+                                  // def9as (I1016:1461;1013:657)
                                   'DEF',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // satkBvb (I1016:1461;1013:658)
+                                  // satkUt3 (I1016:1461;1013:658)
                                   'SATK',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // sdef8aw (I1016:1461;1013:659)
+                                  // sdef28s (I1016:1461;1013:659)
                                   'SDEF',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // spdGx3 (I1016:1461;1013:660)
+                                  // spdAF5 (I1016:1461;1013:660)
                                   'SPD',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
+                                    fontSize: 10 * ffem,
                                     fontWeight: FontWeight.w700,
-                                    height: 1.6,
-                                    color: Color(0xff74cb48),
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           Container(
-                            // dividerbzK (I1016:1461;1013:661)
-                            margin: EdgeInsets.fromLTRB(0, 0, 12, 0),
-                            width: 1,
-                            height: 96,
+                            // dividerJ6P (I1016:1461;1013:661)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 12 * fem, 0 * fem),
+                            width: 1 * fem,
+                            height: 96 * fem,
                             decoration: BoxDecoration(
                               color: Color(0xffe0e0e0),
                             ),
                           ),
                           Container(
-                            // data8DZ (I1016:1461;1013:662)
-                            margin: EdgeInsets.fromLTRB(0, 0, 8, 0),
+                            // datapqR (I1016:1461;1013:662)
+                            margin: EdgeInsets.fromLTRB(
+                                0 * fem, 0 * fem, 8 * fem, 0 * fem),
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  // r9Z (I1016:1461;1013:663)
+                                  // 9sh (I1016:1461;1013:663)
                                   '045',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // PfH (I1016:1461;1013:664)
+                                  // tqH (I1016:1461;1013:664)
                                   '049',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // 98f (I1016:1461;1013:665)
+                                  // Sbu (I1016:1461;1013:665)
                                   '049',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // VCX (I1016:1461;1013:666)
+                                  // P1M (I1016:1461;1013:666)
                                   '065',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // q1V (I1016:1461;1013:667)
+                                  // jb1 (I1016:1461;1013:667)
                                   '065',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                                 Text(
-                                  // ydV (I1016:1461;1013:668)
+                                  // HMd (I1016:1461;1013:668)
                                   '045',
                                   style: GoogleFonts.poppins(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.w400,
-                                    height: 1.6,
-                                    color: Color(0xff1c1c1c),
+                                    fontSize: 10 * ffem,
+                                    fontWeight: FontWeight.w700,
+                                    height: 1.6 * ffem / fem,
+                                    color: Color.fromARGB(255, 139, 141, 139),
                                   ),
                                 ),
                               ],
                             ),
                           ),
                           Container(
-                            // chartXf1 (I1016:1461;1013:669)
-                            padding: EdgeInsets.fromLTRB(0, 6, 0, 6),
-                            width: 233,
+                            // chart2KD (I1016:1461;1013:669)
+                            padding: EdgeInsets.fromLTRB(
+                                0 * fem, 6 * fem, 0 * fem, 6 * fem),
+                            width: 220 * fem,
                             height: double.infinity,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // chart1SX5 (I1016:1461;1013:670)
+                                  // chart1jjR (I1016:1461;1013:670)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valuezoV (I1016:1461;1013:671)
+                                    // valueu87 (I1016:1461;1013:671)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglewTq (I1016:1461;1013:672)
-                                          left: 0,
-                                          top: 0,
+                                          // retangleerP (I1016:1461;1013:672)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 45,
-                                              height: 4,
+                                              width: 45 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // backgrounde7M (I1016:1461;1013:673)
-                                          left: 0,
-                                          top: 0,
+                                          // backgroundA43 (I1016:1461;1013:673)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -664,50 +579,54 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 12,
+                                  height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart2XB9 (I1016:1461;1013:674)
+                                  // chart249R (I1016:1461;1013:674)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valuet1h (I1016:1461;1013:675)
+                                    // valuecgj (I1016:1461;1013:675)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangleE5Z (I1016:1461;1013:676)
-                                          left: 0,
-                                          top: 0,
+                                          // retanglea7m (I1016:1461;1013:676)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 49,
-                                              height: 4,
+                                              width: 49 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundvyy (I1016:1461;1013:677)
-                                          left: 0,
-                                          top: 0,
+                                          // backgroundhCP (I1016:1461;1013:677)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -718,50 +637,54 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 12,
+                                  height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart3qLF (I1016:1461;1013:678)
+                                  // chart3Q6o (I1016:1461;1013:678)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valuePsZ (I1016:1461;1013:679)
+                                    // valueN3d (I1016:1461;1013:679)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangle9rj (I1016:1461;1013:680)
-                                          left: 0,
-                                          top: 0,
+                                          // retanglei7V (I1016:1461;1013:680)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 49,
-                                              height: 4,
+                                              width: 49 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundfq5 (I1016:1461;1013:681)
-                                          left: 0,
-                                          top: 0,
+                                          // background2ts (I1016:1461;1013:681)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -772,50 +695,54 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 12,
+                                  height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart4Mxo (I1016:1461;1013:682)
+                                  // chart4k4B (I1016:1461;1013:682)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valueXMV (I1016:1461;1013:683)
+                                    // valueJrP (I1016:1461;1013:683)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangleH5m (I1016:1461;1013:684)
-                                          left: 0,
-                                          top: 0,
+                                          // retangle3JB (I1016:1461;1013:684)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 65,
-                                              height: 4,
+                                              width: 65 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundnoD (I1016:1461;1013:685)
-                                          left: 0,
-                                          top: 0,
+                                          // backgroundmjy (I1016:1461;1013:685)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -826,50 +753,54 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 12,
+                                  height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart5VxX (I1016:1461;1013:686)
+                                  // chart5fKZ (I1016:1461;1013:686)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valueeqR (I1016:1461;1013:687)
+                                    // valueckb (I1016:1461;1013:687)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglenwd (I1016:1461;1013:688)
-                                          left: 0,
-                                          top: 0,
+                                          // retangleaBd (I1016:1461;1013:688)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 65,
-                                              height: 4,
+                                              width: 65 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundv2F (I1016:1461;1013:689)
-                                          left: 0,
-                                          top: 0,
+                                          // backgroundWzP (I1016:1461;1013:689)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -880,50 +811,54 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 12,
+                                  height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart6cfm (I1016:1461;1013:690)
+                                  // chart61RM (I1016:1461;1013:690)
                                   width: double.infinity,
-                                  height: 4,
+                                  height: 4 * fem,
                                   child: Container(
-                                    // valueBTy (I1016:1461;1013:691)
+                                    // valueNFu (I1016:1461;1013:691)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(4),
+                                      borderRadius:
+                                          BorderRadius.circular(4 * fem),
                                     ),
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglewCF (I1016:1461;1013:692)
-                                          left: 0,
-                                          top: 0,
+                                          // retanglevYK (I1016:1461;1013:692)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 45,
-                                              height: 4,
+                                              width: 45 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
-                                                  color: Color(0xff74cb48),
+                                                  color: Color.fromARGB(
+                                                      255, 231, 11, 11),
                                                 ),
                                               ),
                                             ),
                                           ),
                                         ),
                                         Positioned(
-                                          // background41y (I1016:1461;1013:693)
-                                          left: 0,
-                                          top: 0,
+                                          // backgroundTHM (I1016:1461;1013:693)
+                                          left: 0 * fem,
+                                          top: 0 * fem,
                                           child: Align(
                                             child: SizedBox(
-                                              width: 233,
-                                              height: 4,
+                                              width: 233 * fem,
+                                              height: 4 * fem,
                                               child: Container(
                                                 decoration: BoxDecoration(
                                                   borderRadius:
-                                                      BorderRadius.circular(4),
-                                                  color: Color(0x3374cb48),
+                                                      BorderRadius.circular(
+                                                          4 * fem),
+                                                  color: Color.fromARGB(
+                                                      51, 123, 124, 123),
                                                 ),
                                               ),
                                             ),
@@ -944,21 +879,141 @@ class PokemonDetails extends StatelessWidget {
               ),
             ),
             Positioned(
-              // pokeballNYT (I1016:1461;1013:703)
-              left: 200,
-              top: 8,
+              // pokeballASf (I1016:1461;1013:703)
+              left: 145.0532226562 * fem,
+              top: 8 * fem,
               child: Align(
                 child: SizedBox(
-                  width: 205.89,
-                  height: 208,
+                  width: 205.89 * fem,
+                  height: 208 * fem,
                   child: Opacity(
-                    opacity: 1.0,
+                    opacity: 1,
                     child: Image.asset(
-                      'lib/assets/pokeballfby.png',
-                      width: 205.89,
-                      height: 208,
+                      'lib/assets/screens/images/pokeball-fby.png',
+                      width: 205.89 * fem,
+                      height: 208 * fem,
                     ),
                   ),
+                ),
+              ),
+            ),
+            Positioned(
+              // imageeMq (I1016:1461;1013:694)
+              left: 32.3000488281 * fem,
+              top: 80 * fem,
+              child: Container(
+                width: 303.7 * fem,
+                height: 200 * fem,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // Seta para esquerda
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 31.92 * fem, 41.2 * fem, 0 * fem),
+                      width: 22 * fem,
+                      height: 22 * fem,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Container(
+                          child: Image.asset(
+                            'lib/assets/components/images/chevronleft-xJf.png',
+                            width: 6.5 * fem,
+                            height: 11.42 * fem,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Flexible(
+                      child: Container(
+                        // image4RZ (I1016:1461;1013:701;1013:1332)
+                        margin: EdgeInsets.fromLTRB(
+                            0 * fem, 0 * fem, 32 * fem, 0 * fem),
+                        width: 180 * fem,
+                        height: 150 * fem,
+                        child: Image.network(
+                          imageUrl,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                    ),
+                    Container(
+                      // Seta para direita
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 32 * fem, 0 * fem, 0 * fem),
+                      width: 22 * fem,
+                      height: 22 * fem,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: TextButton.styleFrom(
+                          padding: EdgeInsets.zero,
+                        ),
+                        child: Container(
+                          width: 24 * fem,
+                          height: 24 * fem,
+                          child: Image.asset(
+                            'lib/assets/screens/images/chevronright-675.png',
+                            width: 24 * fem,
+                            height: 24 * fem,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Positioned(
+              // titleUkB (I1016:1461;1013:486)
+              left: 29.3332519531 * fem,
+              top: 24 * fem,
+              child: Container(
+                width: 326.67 * fem,
+                height: 32 * fem,
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      // pokmonnameXTZ (I1016:1461;1013:489)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 112 * fem, 0 * fem),
+                      child: Text(
+                        name,
+                        style: GoogleFonts.poppins(
+                          fontSize: 24 * ffem,
+                          fontWeight: FontWeight.w700,
+                          height: 1.3333333333 * ffem / fem,
+                          color: Color(0xffffffff),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      // typechips65Z (I1016:1461;1013:569)
+                      margin: EdgeInsets.fromLTRB(
+                          0 * fem, 0 * fem, 16 * fem, 0 * fem),
+                      width: 46 * fem,
+                      height: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 235, 238, 233),
+                        borderRadius: BorderRadius.circular(22 * fem),
+                      ),
+                      child: Center(
+                        child: Text(
+                          // 2fD (I1016:1461;1013:490)
+                          '#$pokemonNum',
+                          style: GoogleFonts.poppins(
+                            fontSize: 12 * ffem,
+                            fontWeight: FontWeight.w700,
+                            height: 1.3333333333 * ffem / fem,
+                            color: Color.fromARGB(171, 1, 128, 128),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
