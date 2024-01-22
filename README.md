@@ -6,7 +6,7 @@
 
 ## 🖥️ About the project
 
-Pokemon API consuming Pokedex project: ( https://pokeapi.co/api/v2/ability/?limit=20&offset=20 ).
+Pokemon API consuming Pokedex project: ( https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json ).
 
 ---
 
