@@ -2,7 +2,18 @@
   <img alt="Logo" src="https://miro.medium.com/v2/resize:fit:4000/1*Zaty9dpItL2UsDofl3Cj0g.png" width="600px">
 </h1>
 
-A new Flutter project.
+<p align="center">Flutter project - Pokedex</p>
+
+## 🖥️ About the project
+
+Pokemon API consuming Pokedex project: ( https://pokeapi.co/api/v2/ability/?limit=20&offset=20 ).
+
+---
+
+## 🥳 Demonstração
+<div align="center" >
+  <img src="https://github.com/vsdiaman/pokemon/blob/main/Pokedex.gif" alt="demo-web" height="425">
+</div>
 
 ## Getting Started
 
