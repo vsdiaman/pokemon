@@ -10,12 +10,35 @@ Pokemon API consuming Pokedex project: ( https://pokeapi.co/api/v2/ability/?limi
 
 ---
 
-## 🥳 Demonstração
+## 🥳 Demonstration
 <div align="center" >
   <img src="https://github.com/vsdiaman/pokemon/blob/main/Pokedex.gif" alt="demo-web" height="425">
 </div>
 
-## Getting Started
+---
+
+## 🚀 Features
+
+- Pokémon Listing
+- Pokémon Details Screen
+
+---
+
+## 🚀 Technologies
+
+- [Flutter](https://flutter.dev/)
+- [Android Studio](https://www.android.com/intl/pt_br/)
+- [VsCode](https://code.visualstudio.com/)
+- [Ubuntu](https://ubuntu.com/)
+
+---
+Made with 💜 by VITOR DIAMANTINO 👋 [See my linkedin](https://www.linkedin.com/in/vitordiamantino/)
+<br>
+
+## 🖥️ Getting Started
+
+- Git Clone
+- flutter pub get
 
 This project is a starting point for a Flutter application.
 
@@ -27,3 +50,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## OBSERVATION
+- The project is not yet finished; some screens, componentization, and the implementation of SQLite to save user information are still pending. Thanks.
