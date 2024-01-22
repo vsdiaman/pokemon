@@ -33,10 +33,10 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(milliseconds: 1200),
     );
 
-    // Lógica adicional, se necessário
+   
     _animationController.forward();
 
-    // Simulação de carregamento de dados (substitua por sua lógica real)
+
     Future.delayed(Duration(seconds: 2), () {
       // Após o carregamento, navegue para a tela principal (PokemonPage)
       Navigator.of(context).pushReplacement(
