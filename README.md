@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="Logo" src="https://pokedex.gabrielrapucci.com.br/_next/image?url=%2Fimages%2Fpokedex.png&w=384&q=75" width="600px">
+  <img alt="Logo" src="https://miro.medium.com/v2/resize:fit:4000/1*Zaty9dpItL2UsDofl3Cj0g.png" width="600px">
 </h1>
 
 A new Flutter project.
