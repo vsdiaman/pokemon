@@ -1,4 +1,6 @@
-# pokemon
+<h1 align="center">
+  <img alt="Logo" src="https://pokedex.gabrielrapucci.com.br/_next/image?url=%2Fimages%2Fpokedex.png&w=384&q=75" width="600px">
+</h1>
 
 A new Flutter project.
 
