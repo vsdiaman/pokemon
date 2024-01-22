@@ -52,7 +52,6 @@ class PokemonCard extends StatelessWidget {
       home: Container(
         child: GestureDetector(
           onTap: () {
-            // Navegar para a tela de detalhes quando o card for clicado
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -62,7 +61,7 @@ class PokemonCard extends StatelessWidget {
                   pokemonNum: pokemonNum,
                   pokemonWeight: pokemonWeight,
                   pokemonHeight: pokemonHeight,
-                  pokemonType: pokemonType, // Passa a lista completa de tipos
+                  pokemonType: pokemonType,
                 ),
               ),
             );
@@ -134,7 +133,7 @@ class PokemonCard extends StatelessWidget {
                             ),
                           ),
                         ), //colocar o } aqui
-                        // Imagem do Pokémon
+
                         Expanded(
                           // alignment: Alignment.bottomLeft,
                           child: Center(
@@ -150,7 +149,7 @@ class PokemonCard extends StatelessWidget {
                             ),
                           ),
                         ),
-                        // Nome do Pokémon
+
                         Container(
                           child: Column(
                             children: [
@@ -225,7 +224,6 @@ class PokemonCard extends StatelessWidget {
                             ],
                           ),
                         ),
-                        // Peso do Pokémon
                       ],
                     ),
                   ),

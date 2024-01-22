@@ -33,12 +33,9 @@ class _SplashScreenState extends State<SplashScreen>
       duration: const Duration(milliseconds: 1200),
     );
 
-   
     _animationController.forward();
 
-
     Future.delayed(Duration(seconds: 2), () {
-      // Após o carregamento, navegue para a tela principal (PokemonPage)
       Navigator.of(context).pushReplacement(
         MaterialPageRoute(builder: (_) => PokemonPage()),
       );

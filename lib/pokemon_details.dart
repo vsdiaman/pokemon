@@ -56,10 +56,8 @@ class PokemonDetails extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              // cardumm (I1016:1461;1013:493)
               left: 4 * fem,
               top: 224 * fem,
-
               child: Container(
                 padding:
                     EdgeInsets.fromLTRB(20 * fem, 56 * fem, 20 * fem, 20 * fem),
@@ -73,7 +71,6 @@ class PokemonDetails extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      // typeNfM (I1016:1461;1013:571)
                       margin: EdgeInsets.fromLTRB(
                           99.5 * fem, 0 * fem, 99.5 * fem, 16 * fem),
                       width: double.infinity,
@@ -82,7 +79,6 @@ class PokemonDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // typechips65Z (I1016:1461;1013:569)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 16 * fem, 0 * fem),
                             width: 46 * fem,
@@ -200,7 +196,6 @@ class PokemonDetails extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      // aboutSHq (I1016:1461;1013:574)
                       child: Container(
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 0 * fem, 16 * fem),
@@ -328,7 +323,6 @@ class PokemonDetails extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // loremipsumdolorsitametconsecte (I1016:1461;1013:520)
                       margin: EdgeInsets.fromLTRB(
                           0 * fem, 0 * fem, 18 * fem, 30 * fem),
                       constraints: BoxConstraints(
@@ -345,7 +339,6 @@ class PokemonDetails extends StatelessWidget {
                       ),
                     ),
                     Center(
-                      // basestatsKCX (I1016:1461;1013:652)
                       child: Container(
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 0 * fem, 16 * fem),
@@ -362,7 +355,6 @@ class PokemonDetails extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // basestatsRFZ (I1016:1461;1013:653)
                       width: double.infinity,
                       height: 96 * fem,
                       decoration: BoxDecoration(
@@ -372,7 +364,6 @@ class PokemonDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Container(
-                            // labelZ6s (I1016:1461;1013:654)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 12 * fem, 0 * fem),
                             height: double.infinity,
@@ -380,7 +371,6 @@ class PokemonDetails extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 Text(
-                                  // hpUUj (I1016:1461;1013:655)
                                   'HP',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
@@ -391,7 +381,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // atkomu (I1016:1461;1013:656)
                                   'ATK',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
@@ -402,7 +391,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // def9as (I1016:1461;1013:657)
                                   'DEF',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
@@ -424,7 +412,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // sdef28s (I1016:1461;1013:659)
                                   'SDEF',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
@@ -435,7 +422,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // spdAF5 (I1016:1461;1013:660)
                                   'SPD',
                                   textAlign: TextAlign.right,
                                   style: GoogleFonts.poppins(
@@ -449,7 +435,6 @@ class PokemonDetails extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // dividerJ6P (I1016:1461;1013:661)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 12 * fem, 0 * fem),
                             width: 1 * fem,
@@ -459,7 +444,6 @@ class PokemonDetails extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // datapqR (I1016:1461;1013:662)
                             margin: EdgeInsets.fromLTRB(
                                 0 * fem, 0 * fem, 8 * fem, 0 * fem),
                             height: double.infinity,
@@ -467,7 +451,6 @@ class PokemonDetails extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Text(
-                                  // 9sh (I1016:1461;1013:663)
                                   '045',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -477,7 +460,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // tqH (I1016:1461;1013:664)
                                   '049',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -487,7 +469,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // Sbu (I1016:1461;1013:665)
                                   '049',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -497,7 +478,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // P1M (I1016:1461;1013:666)
                                   '065',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -507,7 +487,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // jb1 (I1016:1461;1013:667)
                                   '065',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -517,7 +496,6 @@ class PokemonDetails extends StatelessWidget {
                                   ),
                                 ),
                                 Text(
-                                  // HMd (I1016:1461;1013:668)
                                   '045',
                                   style: GoogleFonts.poppins(
                                     fontSize: 10 * ffem,
@@ -530,7 +508,6 @@ class PokemonDetails extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            // chart2KD (I1016:1461;1013:669)
                             padding: EdgeInsets.fromLTRB(
                                 0 * fem, 6 * fem, 0 * fem, 6 * fem),
                             width: 220 * fem,
@@ -539,11 +516,9 @@ class PokemonDetails extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Container(
-                                  // chart1jjR (I1016:1461;1013:670)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valueu87 (I1016:1461;1013:671)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -553,7 +528,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangleerP (I1016:1461;1013:672)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -570,7 +544,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundA43 (I1016:1461;1013:673)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -597,11 +570,9 @@ class PokemonDetails extends StatelessWidget {
                                   height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart249R (I1016:1461;1013:674)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valuecgj (I1016:1461;1013:675)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -611,7 +582,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglea7m (I1016:1461;1013:676)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -628,7 +598,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundhCP (I1016:1461;1013:677)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -655,11 +624,9 @@ class PokemonDetails extends StatelessWidget {
                                   height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart3Q6o (I1016:1461;1013:678)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valueN3d (I1016:1461;1013:679)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -669,7 +636,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglei7V (I1016:1461;1013:680)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -686,7 +652,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // background2ts (I1016:1461;1013:681)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -713,11 +678,9 @@ class PokemonDetails extends StatelessWidget {
                                   height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart4k4B (I1016:1461;1013:682)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valueJrP (I1016:1461;1013:683)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -727,7 +690,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangle3JB (I1016:1461;1013:684)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -744,7 +706,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundmjy (I1016:1461;1013:685)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -771,11 +732,9 @@ class PokemonDetails extends StatelessWidget {
                                   height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart5fKZ (I1016:1461;1013:686)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valueckb (I1016:1461;1013:687)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -785,7 +744,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retangleaBd (I1016:1461;1013:688)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -802,7 +760,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundWzP (I1016:1461;1013:689)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -829,11 +786,9 @@ class PokemonDetails extends StatelessWidget {
                                   height: 12 * fem,
                                 ),
                                 Container(
-                                  // chart61RM (I1016:1461;1013:690)
                                   width: double.infinity,
                                   height: 4 * fem,
                                   child: Container(
-                                    // valueNFu (I1016:1461;1013:691)
                                     width: double.infinity,
                                     height: double.infinity,
                                     decoration: BoxDecoration(
@@ -843,7 +798,6 @@ class PokemonDetails extends StatelessWidget {
                                     child: Stack(
                                       children: [
                                         Positioned(
-                                          // retanglevYK (I1016:1461;1013:692)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -860,7 +814,6 @@ class PokemonDetails extends StatelessWidget {
                                           ),
                                         ),
                                         Positioned(
-                                          // backgroundTHM (I1016:1461;1013:693)
                                           left: 0 * fem,
                                           top: 0 * fem,
                                           child: Align(
@@ -894,7 +847,6 @@ class PokemonDetails extends StatelessWidget {
               ),
             ),
             Positioned(
-              // pokeballASf (I1016:1461;1013:703)
               left: 145.0532226562 * fem,
               top: 8 * fem,
               child: Align(
@@ -913,7 +865,6 @@ class PokemonDetails extends StatelessWidget {
               ),
             ),
             Positioned(
-              // imageeMq (I1016:1461;1013:694)
               left: 32.3000488281 * fem,
               top: 80 * fem,
               child: Container(
@@ -944,7 +895,6 @@ class PokemonDetails extends StatelessWidget {
                     ),
                     Flexible(
                       child: Container(
-                        // image4RZ (I1016:1461;1013:701;1013:1332)
                         margin: EdgeInsets.fromLTRB(
                             0 * fem, 0 * fem, 32 * fem, 0 * fem),
                         width: 160 * fem,
@@ -1004,7 +954,7 @@ class PokemonDetails extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Spacer(), // Utilizamos o Spacer para ocupar todo o espaço disponível
+                        Spacer(),
                         Container(
                           width: 46 * fem,
                           height: double.infinity,

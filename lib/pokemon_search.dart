@@ -14,13 +14,13 @@ class _SearchBarAppState extends State<SearchBarApp> {
       builder: (BuildContext context, SearchController controller) {
         return Container(
           margin: const EdgeInsets.only(right: 10.0),
-          width: 200.0, // Ajuste a largura conforme necessário
-          height: 40.0, // Ajuste a altura conforme necessário
+          width: 200.0, 
+          height: 40.0, 
           child: SearchBar(
             controller: controller,
             padding: const MaterialStatePropertyAll<EdgeInsets>(
               EdgeInsets.symmetric(
-                  horizontal: 8.0), // Ajuste o valor conforme necessário
+                  horizontal: 8.0), 
             ),
             leading: const Icon(Icons.search),
             trailing: <Widget>[

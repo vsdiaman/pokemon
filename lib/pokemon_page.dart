@@ -31,7 +31,7 @@ class _PokemonPageState extends State<PokemonPage> {
           ),
         ),
         actions: [
-          SearchBarApp(), // Adicione o componente de pesquisa ao AppBar
+          SearchBarApp(),
         ],
       ),
       body: Container(
@@ -52,7 +52,6 @@ class _PokemonPageState extends State<PokemonPage> {
                   } else {
                     List<Map<String, dynamic>> pokemonList = snapshot.data!;
 
-                    // Exibe apenas os Pokémon até o índice `displayedPokemonCount`
                     List<Map<String, dynamic>> displayedPokemon =
                         pokemonList.take(displayedPokemonCount).toList();
 
